@@ -1,0 +1,29 @@
+class while20
+{
+    static void Main()
+    {
+        Console.Write("Введите целое число N (> 0): ");
+        int N = Convert.ToInt32(Console.ReadLine());
+
+        if (N <= 0)
+        {
+            Console.WriteLine("Число должно быть больше 0");
+            return;
+        }
+
+        bool Two = false;
+
+        while (N > 0)
+        {
+            int ost = N % 10; 
+            if (ost == 2)
+            {
+                Two = true; 
+                break; 
+            }
+            N /= 10;
+        }
+
+        Console.WriteLine(Two);
+    }
+}
