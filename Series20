@@ -1,0 +1,37 @@
+class Series20
+{
+    static void Main()
+    {
+        Console.Write("Введите количество элементов N (>1): ");
+        int N = int.Parse(Console.ReadLine());
+
+        if (N <= 1)
+        {
+            Console.WriteLine("N должно быть больше 1");
+            return;
+        }
+
+        int[] numbers = new int[N];
+
+        Console.WriteLine($"Введите {N} целых числа:");
+        for (int i = 0; i < N; i++)
+        {
+            numbers[i] = int.Parse(Console.ReadLine());
+        }
+
+        int K = 0;
+
+        Console.WriteLine("Элементы, меньшие своего правого соседа:");
+
+        for (int i = 0; i < N - 1; i++)
+        {
+            if (numbers[i] < numbers[i + 1])
+            {
+                Console.WriteLine(numbers[i]);
+                K++;
+            }
+        }
+
+        Console.WriteLine($"Количество таких элементов K: {K}");
+    }
+}
